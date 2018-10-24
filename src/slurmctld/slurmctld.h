@@ -2708,7 +2708,9 @@ extern bool valid_tres_name(char *name);
  * Send warning signal to job before end time.
  *
  * IN job_ptr - job to send warn signal to.
+ * IN preempt - whether the job is being preempted. If it is then just send the
+ *              signal.
  */
-extern void send_job_warn_signal(struct job_record *job_ptr);
+extern void send_job_warn_signal(struct job_record *job_ptr, bool preempt);
 
 #endif /* !_HAVE_SLURMCTLD_H */
